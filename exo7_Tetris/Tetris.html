@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Tetris</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link id="css" href="css/css_1.css" rel="stylesheet" type="text/css"/>
+    </head>
+    <body>
+        <div class="contnaire">
+            <header>
+                <div class="les_titres">
+
+                    <h2 class="titre2">JEUX</h2>
+                    <h1 class="titre">TETRIS</h1>
+                </div>
+                <div align="center">
+                    <img id="tetro1" src="image/tetro.png" alt=""/>
+                </div>
+                <div class="icon">
+                    <img class="git" src="image/git.png" alt=""/>
+                    Gitub-Tetris
+                </div>
+            </header>
+            <div class="hms">
+                <p id='hms'>Heure</p>
+                <div id='heure'></div>
+            </div>
+            <div class="image">
+                <img id="tetro2" src="image/tetro2.png" alt=""/>
+                <img id="tetro3" src="image/tetro.png" alt=""/>
+                <img id="tetro4" src="image/tetro5.png" alt=""/>
+                <img id="tetro5" src="image/tetro.png" alt=""/>
+            </div>
+            
+            <div id="aide" align="center">
+                
+                <div id="aide2">
+                    <div class="but">
+                        <p class="titre_but">But du jeux</p>
+                        <p class="aide">Le but est de placer des formes (7 formes cubiques différentes) 
+                            qui descendent du haut vers la bas d'un tableau pour en former des lignes horizontales pleines. 
+                            Dès qu'elle est pleine, 
+                            la ligne est détruite et tous les cubes au-dessus de la ligne descendent d'une rangée.</p>
+                    </div>
+                    <table class="touche">
+                        <thead>
+                            <tr>
+                                <th colspan="2" class="titre_touche">Touche</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th>&#8594;</th>
+                                <th>DROITE</th>
+                            </tr>
+                            <tr>
+                                <th>&#8592;</th>
+                                <th>GAUCHE</th>
+                            </tr>
+                            <tr>
+                                <th>&#8595;</th>
+                                <th>BAS</th>
+                            </tr>
+                            <tr>
+                                <th>space</th>
+                                <th>ROTATION</th>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <button id="pause" onclick="document.getElementById('css').href='css/css.css';">style1</button>
+                <button id="pause" onclick="document.getElementById('css').href='css/css_1.css';">style2</button>
+                
+                <!--<audio controls>
+                    <source src="image/musique/hans-zimmer-no-time-for-caution-interstellar-soundtrackdockinginterstellar-ost.mp3" type="audio/mpeg">
+                    Your browser does not support the <code>audio</code> tag.
+                </audio>-->
+                
+            </div>
+            <div class="contnaire_score">
+                <div align="center" class="score">
+                    <div class="position_score"> Score : <p id='score'>0</p></div>
+                </div>
+            </div>
+            
+            <div align="right" id="tetris"></div>
+            
+            <div align="center">
+                <button id='play'>Lancer</button>
+            </div>
+            
+            <!--<div align="center">	         
+                <select id='operation'>
+                    <option value='20'>20</option>
+                    <option value='30'>30</option>
+                </select>
+                <button onclick="()">Grille</button>
+            </div>-->
+            <img id="etoile" src="image/et.gif" alt=""/>
+            <img id="etoile1" src="image/et.gif" alt=""/>
+            <img id="etoile2" src="image/et.gif" alt=""/>
+        </div>
+        <script> 
+            var boite1 = document.querySelector('#heure'); 
+            //variable objet 
+            function horloge() 
+            { 
+            var heure =new Date(); 
+            /*var heureGMT = heure.toGMTString();*/ 
+            boite1.textContent = heure.getHours()+":"+ heure.getMinutes()+":"+ heure.getSeconds() /*+ " mais en GMT il est : " + heureGMT*/; 
+            } 
+            setInterval("horloge()", 1000);
+        </script>
+        <script src="js/tetromino.js" type="text/javascript"></script>
+        <script src="js/tetris.js" type="text/javascript"></script>
+    </body>
+</html>
